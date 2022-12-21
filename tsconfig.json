@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "outDir": "/",
+    "removeComments": true,
+    "target": "ES2015",
+    "lib": ["DOM", "ES2020"],
+    "watch": true
+  }
+}
