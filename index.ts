@@ -1,7 +1,7 @@
-class EventEmmiter {
+module.exports = class EventEmitter {
   public eventObj: { [key: string]: [Function] };
   constructor() {
-    this.eventObj;
+    this.eventObj = {};
   }
   public subscribe(event: string, func: Function) {
     if (event in this.eventObj) {
@@ -19,19 +19,20 @@ class EventEmmiter {
     return { deltedFun };
   }
 
-  public emit(event: string, eventOB: { string: String }) {
+  public emit(event: string, eventOB: { [key: string]: string }) {
     const listFun = this.eventObj[event];
     for (let i = 0; i < listFun.length; i++) {
       listFun[i](eventOB);
     }
   }
-}
+};
+
 class unsubscribe {
   public eventListFun: [Function];
   public func: Function;
   constructor(eventListFun: [Function], funcToDel: Function) {
     this.eventListFun = eventListFun;
-    this.func = this.func;
+    this.func = funcToDel;
   }
   unsubscribe() {
     const index = this.eventListFun.indexOf(this.func);
